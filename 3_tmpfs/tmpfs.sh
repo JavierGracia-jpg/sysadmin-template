@@ -1,3 +1,10 @@
 #!/bin/bash
 
-echo "Your solution here, delete this line" && exit 128
+# Crear carpeta
+mkdir -p /mnt/tmpfs
+
+# Montar tmpfs de 1 GB
+mount -t tmpfs -o size=1G tmpfs /mnt/tmpfs
+
+# Comprobar
+df -h /mnt/tmpfs
