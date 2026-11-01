@@ -1,4 +1,12 @@
 #!/bin/bash
 
-echo "Your solution here, delete this line" && exit 128
+dd if=/dev/zero of=/swapfile bs=1M count=8192
 
+chmod 600 /swapfile
+
+mkswap /swapfile
+
+swapon /swapfile
+
+swapon --show
+free -h
